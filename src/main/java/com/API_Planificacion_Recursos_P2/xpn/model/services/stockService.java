@@ -6,6 +6,7 @@ import com.API_Planificacion_Recursos_P2.xpn.model.common.exceptions.NegativeSto
 import com.API_Planificacion_Recursos_P2.xpn.model.entities.almacen;
 import com.API_Planificacion_Recursos_P2.xpn.model.entities.stock;
 
+
 public interface stockService {
 
     //Obtener stock actual    

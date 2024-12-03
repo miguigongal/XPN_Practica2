@@ -1,4 +1,4 @@
-package com.API_Planificacion_Recursos_P2.API_Planificacion_Recursos_P2;
+package com.API_Planificacion_Recursos_P2.xpn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
