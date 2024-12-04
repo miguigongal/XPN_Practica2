@@ -1,11 +1,16 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/muebles
-    username: quartzone
-    password: quartzone
+    username: miguel
+    password: molotov
   jpa:
+    defer-datasource-initialization: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
+      continue-on-error: true

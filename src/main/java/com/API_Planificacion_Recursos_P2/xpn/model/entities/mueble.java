@@ -1,12 +1,15 @@
 package com.API_Planificacion_Recursos_P2.xpn.model.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "MUEBLE")
-public class mueble {
+public class mueble implements Serializable{
 
-    //The id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     //The name
     private String nombre;
@@ -18,8 +21,7 @@ public class mueble {
         this.nombre = nombre;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Long getId(){
         return id;
     }

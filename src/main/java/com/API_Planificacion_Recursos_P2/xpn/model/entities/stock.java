@@ -1,16 +1,27 @@
 package com.API_Planificacion_Recursos_P2.xpn.model.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "STOCK")
-public class stock {
+public class stock implements Serializable{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "idMueble")
     private mueble mueble;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "idAlmacen")
     private almacen almacen;
+    @Column(name="max_stock")
     private int maxStock;
+    @Column(name="min_stock")
     private int minStock;
+    @Column(name="actual_stock")
     private int actualStock;
 
     public stock(){        
@@ -24,8 +35,7 @@ public class stock {
         this.actualStock = actualStock;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Long getId(){
         return id;
     }
@@ -34,8 +44,7 @@ public class stock {
         this.id = id;
     }
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "idMueble")
+
     public mueble getMueble(){
         return mueble;
     }
@@ -44,8 +53,7 @@ public class stock {
         this.mueble = mueble;
     }
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "idAlmacen")
+
     public almacen getAlmacen(){
         return almacen;
     }

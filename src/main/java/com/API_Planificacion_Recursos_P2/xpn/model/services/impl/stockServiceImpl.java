@@ -50,12 +50,13 @@ public class stockServiceImpl implements stockService{
         stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
         return foundStock.getMinStock();
     }
-
+    //Almacen pasarle un nombre y buscar por nombre el id
     @Override
     public void updateStock(Long muebleId, Long almacenId, int newStock) throws NegativeStockException{
         stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
         checkNewStockValue(newStock);
         foundStock.setActualStock(newStock);
+
         stockDao.save(foundStock);
     }
 
