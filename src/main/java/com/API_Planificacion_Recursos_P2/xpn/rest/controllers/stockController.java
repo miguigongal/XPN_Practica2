@@ -26,17 +26,23 @@ public class stockController {
     @GetMapping("/actual")
     public Integer getCurrentStock(@Validated @RequestParam Long muebleId, @RequestParam Long almacenId) throws InstanceNotFoundException{
         int currentStock = stockService.getCurrentStock(muebleId, almacenId);
+        System.out.println(currentStock);
         return currentStock;
     }
 
     @GetMapping("/max")
-    public Integer getMaximumStock(@Validated @RequestPart("muebleId") Long muebleId, @RequestPart("almacenId") Long almacenId) throws InstanceNotFoundException{
+    public Integer getMaximumStock(@Validated @RequestParam Long muebleId, @RequestParam Long almacenId) throws InstanceNotFoundException{
         int maximumStock = stockService.getMaxStock(muebleId, almacenId);
         return maximumStock;
     }
-
+    /*
     @GetMapping("/min")
     public Integer getMinimumStock(@Validated @RequestPart("muebleId") Long muebleId, @RequestPart("almacenId") Long almacenId) throws InstanceNotFoundException{
+        int minimumStock = stockService.getMinStock(muebleId, almacenId);
+        return minimumStock;
+    }*/
+    @GetMapping("/min")
+    public Integer getMinimumStock(@Validated @RequestParam Long muebleId, @RequestParam Long almacenId) throws InstanceNotFoundException{
         int minimumStock = stockService.getMinStock(muebleId, almacenId);
         return minimumStock;
     }
