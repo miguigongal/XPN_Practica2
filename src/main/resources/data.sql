@@ -8,11 +8,11 @@ INSERT INTO MUEBLE (nombre) VALUES
 
 -- Insertar datos en la tabla ALMACEN
 INSERT INTO ALMACEN (nombre) VALUES 
-('Coruña'),
+('Coruna'),
 ('Lugo'),
 ('Ourense'),
 ('Pontevedra'),
-('Antártida');
+('Antartida');
 
 -- Insertar datos en la tabla STOCK
 INSERT INTO STOCK (id_mueble, id_almacen, max_stock, min_stock, actual_stock) VALUES 

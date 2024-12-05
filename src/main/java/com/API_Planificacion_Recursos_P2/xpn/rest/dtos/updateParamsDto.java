@@ -3,15 +3,15 @@ package com.API_Planificacion_Recursos_P2.xpn.rest.dtos;
 public class updateParamsDto {
 
     private Long idMueble;
-    private Long idAlmacen;
+    private String nombreAlmacen;
     private int actualStock;
 
     public updateParamsDto(){
     }
 
-    public updateParamsDto(Long idMueble, Long idAlmacen, int actualStock){
+    public updateParamsDto(Long idMueble, String nombreAlmacen, int actualStock){
         this.idMueble = idMueble;
-        this.idAlmacen = idAlmacen;
+        this.nombreAlmacen = nombreAlmacen;
         this.actualStock = actualStock;
     }
 
@@ -23,12 +23,12 @@ public class updateParamsDto {
         this.idMueble = idMueble;
     }
 
-    public Long getIdAlmacen(){
-        return idAlmacen;
+    public String getNombreAlmacen(){
+        return nombreAlmacen;
     }
 
-    public void setIdAlmacen(Long idAlmacen){
-        this.idAlmacen = idAlmacen;
+    public void setNombreAlmacen(String nombreAlmacen){
+        this.nombreAlmacen = nombreAlmacen;
     }
 
     public int getActualStock(){

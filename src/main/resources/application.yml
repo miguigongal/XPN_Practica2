@@ -3,8 +3,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/muebles
-    username: miguel
-    password: molotov
+    username: quartzone
+    password: quartzone
   jpa:
     defer-datasource-initialization: true
     hibernate:

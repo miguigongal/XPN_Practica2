@@ -26,6 +26,3 @@ CREATE TABLE STOCK (
     CONSTRAINT fk_mueble FOREIGN KEY (id_mueble) REFERENCES MUEBLE(id) ON DELETE CASCADE,  -- Relación con MUEBLE
     CONSTRAINT fk_almacen FOREIGN KEY (id_almacen) REFERENCES ALMACEN(id) ON DELETE CASCADE  -- Relación con ALMACEN
 );
-
-
-

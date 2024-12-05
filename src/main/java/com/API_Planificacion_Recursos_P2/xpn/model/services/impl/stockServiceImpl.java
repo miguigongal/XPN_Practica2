@@ -34,26 +34,26 @@ public class stockServiceImpl implements stockService{
     }
 
     @Override
-    public Integer getCurrentStock(Long muebleId, Long almacenId) throws InstanceNotFoundException{        
-        stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
+    public Integer getCurrentStock(Long muebleId, String almacenName) throws InstanceNotFoundException{        
+        stock foundStock = stockDao.findByMuebleIdAndAlmacenNombre(muebleId, almacenName).get();
         return foundStock.getActualStock();
     }
 
     @Override
-    public Integer getMaxStock(Long muebleId, Long almacenId) throws InstanceNotFoundException{
-        stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
+    public Integer getMaxStock(Long muebleId, String almacenName) throws InstanceNotFoundException{
+        stock foundStock = stockDao.findByMuebleIdAndAlmacenNombre(muebleId, almacenName).get();
         return foundStock.getMaxStock();
     }
 
     @Override
-    public Integer getMinStock(Long muebleId, Long almacenId) throws InstanceNotFoundException{
-        stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
+    public Integer getMinStock(Long muebleId, String almacenName) throws InstanceNotFoundException{
+        stock foundStock = stockDao.findByMuebleIdAndAlmacenNombre(muebleId, almacenName).get();
         return foundStock.getMinStock();
     }
     //Almacen pasarle un nombre y buscar por nombre el id
     @Override
-    public void updateStock(Long muebleId, Long almacenId, int newStock) throws NegativeStockException{
-        stock foundStock = stockDao.findByMuebleIdAndAlmacenId(muebleId, almacenId).get();
+    public void updateStock(Long muebleId, String almacenName, int newStock) throws NegativeStockException{
+        stock foundStock = stockDao.findByMuebleIdAndAlmacenNombre(muebleId, almacenName).get();
         checkNewStockValue(newStock);
         foundStock.setActualStock(newStock);
 
