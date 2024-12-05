@@ -54,6 +54,4 @@ public class stockController {
         almacen almacen = stockService.recommendAlmacen();
         return almacenConversor.toAlmacenDto(almacen);
     }
-
-
 }
