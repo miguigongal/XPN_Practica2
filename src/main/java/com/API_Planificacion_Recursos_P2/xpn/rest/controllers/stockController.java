@@ -28,30 +28,49 @@ public class stockController {
     @GetMapping("/actual")
     public Integer getCurrentStock(@Validated @RequestParam Long muebleId, @RequestParam String almacenName) throws InstanceNotFoundException{
         int currentStock = stockService.getCurrentStock(muebleId, almacenName);
+        System.out.println(almacenName);
         System.out.println(currentStock);
+        System.out.println("actual");
         return currentStock;
     }
 
     @GetMapping("/max")
     public Integer getMaximumStock(@Validated @RequestParam Long muebleId, @RequestParam String almacenName) throws InstanceNotFoundException{
         int maximumStock = stockService.getMaxStock(muebleId, almacenName);
+        System.out.println("max");
         return maximumStock;
     }
   
     @GetMapping("/min")
     public Integer getMinimumStock(@Validated @RequestParam Long muebleId, @RequestParam String almacenName) throws InstanceNotFoundException{
         int minimumStock = stockService.getMinStock(muebleId, almacenName);
+        System.out.println("min");
         return minimumStock;
     }
 
     @PostMapping("/updateStock")
     public void updateStock(@RequestBody updateParamsDto paramsDto) throws NegativeStockException{
-        stockService.updateStock(paramsDto.getIdMueble(), paramsDto.getNombreAlmacen(), paramsDto.getActualStock());        
+        stockService.updateStock(paramsDto.getIdMueble(), paramsDto.getNombreAlmacen(), paramsDto.getActualStock());
+        System.out.println("stock"+ paramsDto.getActualStock());
+        System.out.println("id mueble "+ paramsDto.getIdMueble());
+        System.out.println("nombre almacen " + paramsDto.getNombreAlmacen());
+        
     }
 
+    /* 
     @GetMapping("/recommend")
     public almacenDto recommendAlmacen(){
         almacen almacen = stockService.recommendAlmacen();
+        System.out.println("recomed");
         return almacenConversor.toAlmacenDto(almacen);
+    }*/
+
+    @GetMapping("/recommend")
+    public String recommendAlmacen(){
+        almacen almacen = stockService.recommendAlmacen();
+        System.out.println("recommend:" + almacen.getNombre());
+
+        return almacen.getNombre();
     }
+
 }
