@@ -60,17 +60,7 @@ public class stockServiceImpl implements stockService{
         stockDao.save(foundStock);
     }
 
-    /*
-    @Override
-    public almacen recommendAlmacen() {
-        List<almacen> allAlmacenes = almacenDao.findAll();
-        
-        Random random = new Random();
-        int randomIndex = random.nextInt(allAlmacenes.size());
-        almacen randomAlmacen = allAlmacenes.get(randomIndex);
 
-        return randomAlmacen;
-    }*/
     @Override
     public almacen recommendAlmacen() {
         List<almacen> allAlmacenes = almacenDao.findAll();
@@ -78,7 +68,6 @@ public class stockServiceImpl implements stockService{
         Random random = new Random();
         almacen randomAlmacen = null;
     
-        // Asegúrate de que el almacén con id = 1 no sea seleccionado
         while (randomAlmacen == null || randomAlmacen.getId() == 1) {
             int randomIndex = random.nextInt(allAlmacenes.size());
             randomAlmacen = allAlmacenes.get(randomIndex);
